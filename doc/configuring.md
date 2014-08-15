@@ -1,6 +1,6 @@
 # Configuring New Relic Insights Integration
 
-Once you've installed and enable this Drupal extension, you must configure the
+Once you've installed and enabled this Drupal extension, you must configure the
 module so that Drupal can communicate with your Insights account.
 
 All configurations for this module are available under the "web services" area
@@ -9,7 +9,7 @@ of the admin configuration section: /admin/config/services/new-relic-insights
 ### Configuration through the UI
 
 __New Relic Account ID__ - This is a required field. You can find it by logging
-in to your Insights account and observing the URL. Your account number if the
+in to your Insights account and observing the URL. Your account number is the
 number following `/accounts/`.
 
 __Insert API Key__ - This is a required field. You can register a key by logging
@@ -21,10 +21,10 @@ query Insights from Drupal. You can register a key in the same way as outlined
 above. See New Relic's [documentation on registering Query keys][] for details.
 
 __Insights query data expiry time__ - If you provide a query key, a selection
-will appear, allowing you to configure an expiry time. In order to reduce the
+will appear allowing you to configure an expiry time. In order to reduce the
 number of queries / amount of data returned by Insights, some data is cached
 locally. This expiry time defines the period for which this data will be stored
-in your application database. It's recommended to keep this relatively low.
+in your application database. It's recommended you keep this relatively low.
 
 __Enable watchdog integration__ - This checkbox toggles watchdog integration.
 Check it to send Drupal log (watchdog) events to Insights. Uncheck it to disable
@@ -47,7 +47,7 @@ All of the above can also be configured in your settings.php file like any other
 variable stored in Drupal. In addition to those, you may wish to configure some
 additional variables, explained below:
 
-__CURL timeout__ - By default, all web service calls to Insights will timeout
+__CURL timeout__ - By default, all web service calls to Insights will time out
 after 5 seconds. You can configure a higher or lower timeout value based on your
 own needs. To do so, add the following line to settings.php:
 ```php
