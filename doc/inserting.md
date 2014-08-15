@@ -1,8 +1,8 @@
-# Insights transaction decoration and other events
+# Insights Transaction decoration and other events
 
 Although Insights provides a wealth of performance data in your Insights
 database out of the box, you will likely want to insert custom events or add
-custom data attributes to your transactions.
+custom data attributes to your Transactions.
 
 
 ## Transaction decoration
@@ -15,7 +15,7 @@ described below.
 
 This structure provides useful metadata to other Drupal systems, providing
 seamless integration with the Entity subsystem, Views filters and handlers, as
-well as access to a wealth of pre-existing attributes and data.
+well as access to a wealth of preexisting attributes and data.
 
 To get started with Transaction decoration, you'll need to install the
 [Better Statistics](https://drupal.org/project/better_statistics) module.
@@ -45,11 +45,11 @@ including some on behalf of Drupal core modules:
   generate from Drupal's perspective, probably redundant in the context of a New
   Relic Transaction.
 * __user_agent__: The full user-agent string for the given transaction, a bit
-  redundant but at least more verbose than what is provided by Insights.
+  redundant but at least more verbose than what is provided by Insights
 * __peak_memory__: The peak memory, in bytes, used by PHP for the given
-  transaction.
+  transaction
 * __cache__: Drupal page cache hit/miss stat for the given transaction (one of:
-  hit, miss, or null for uncacheable requests).
+  hit, miss, or null for uncacheable requests)
 
 Better Statistics also provides custom attributes on behalf of Drupal core
 modules. For instance, if the current request corresponds to a node, you could
@@ -104,7 +104,7 @@ Transactions would be decorated with the attribute "my_customer_segment," whose
 value would be pulled from the callback you defined.
 
 Note that the schema and help text you provide for your custom attributes
-informs the Entity API about what attributes are available on Insight entities.
+inform the Entity API about what attributes are available on Insight entities.
 This, in turn, informs Views and EntityFieldQuery about what you can use to
 filter your Insights queries.
 
@@ -116,7 +116,7 @@ note, including critical alerts, debug messages, and other useful details.
 
 Watchdog integration can be configured at the main configuration page for this
 module. Watchdog integration is achieved by queueing messages logged to watchdog
-in the Drupal Queue. Queued messages are processed automatically on cron, but
+in the Drupal Queue. Queued messages are processed automatically on cron but
 can also be processed manually in the following ways:
 
 * If the [Drush Queue][] extension is installed, you can run
@@ -125,8 +125,7 @@ can also be processed manually in the following ways:
   so, ensure your actual cron key is appended:
   ``` https://example.com/new-relic-insights-runner/your-cron-key-here```
 
-Because it's unlikely that you run cron very frequently, if you require real
-time, or near-real time watchdog analysis, you'll want to manually trigger queue
+Because it's unlikely that you run cron very frequently, if you require real-time, or near-real time watchdog analysis, you'll want to manually trigger queue
 processing in one of the aforementioned ways at a high frequency (e.g. once
 every minute or every 30 seconds).
 
@@ -140,7 +139,7 @@ The following fields are added to all watchdog events in Insights:
 * __user__: The e-mail address of the user for whom the watchdog event was
   logged. For anonymous users, this field will be blank.
 * __uid__: The user ID of the user for whom the watchdog event was logged. For
-  anonymous users, the value of this field would be 0.
+  anonymous users, the value of this field will be 0.
 * __request_uri__: The request URI associated with the given watchdog event.
 * __referer__: The URI associated with the referring page prior to this request.
 * __ip__: The IP address from where the request for this page came.
@@ -148,7 +147,7 @@ The following fields are added to all watchdog events in Insights:
 * __severity__: An integer representing the severity of this message (e.g. an
   alert vs. a notice vs. a warning vs. an emergency, see below for details).
 * __fullMessage__: The fully processed message that you would normally see when
-  analyzing watchdog messages and other notices/ errors.
+  analyzing watchdog messages and other notices/errors.
 * __message__: The raw, unprocessed message as it was passed to watchdog in
   code. This may include replacement tokens.
 
