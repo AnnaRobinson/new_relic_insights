@@ -1,13 +1,12 @@
 # Querying Insights events
 
-New Relic Insights allows you to query data in real time using a SQL-like query
+New Relic Insights allows you to query data in real-time using a SQL-like query
 language called NRQL. This module allows you to query Insights in a variety of
 ways, exposing Insights data natively to Drupal.
 
 ## Drupal Views
 
-[Views](https://drupal.org/project/views) is a powerful, ubiquitous  query
-building tool for Drupal. This module gives site builders and savvy site
+[Views](https://drupal.org/project/views) is a powerful, ubiquitous  query-building tool for Drupal. This module gives site builders and savvy site
 administrators the ability to query Insights through a GUI (without having to
 know the underlying NRQL query language). To do so, you'll need to install and
 enable the [EntityFieldQuery Views Backend][] module.
@@ -15,7 +14,7 @@ enable the [EntityFieldQuery Views Backend][] module.
 Once this module is [enabled and configured][], and EFQ Views is installed,
 creating a View of Insights data is as simple as creating any other View.
 
-Currently, Transactions are best-supported, with other custom event type support
+Currently, Transactions are best supported, with support for other custom event types
 in development. Any custom attribute known to Drupal (see the "Better Statistics
 and custom attributes" section of the [transaction decoration][] documentation
 for details) can be displayed or used to filter your query.
